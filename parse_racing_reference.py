@@ -8,6 +8,10 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from tqdm import tqdm
 
+import chromedriver_autoinstaller
+
+
+
 
 def get_racing_reference_schedule(season: int, series_id: str) -> pd.DataFrame:
     if series_id.upper() == "W":
@@ -534,6 +538,8 @@ def get_racing_reference_entry_lists(
 
 
 def main():
+    chromedriver_autoinstaller.install()
+    
     # current_year = datetime.now().year
     now = datetime.now()
     current_year = now.year
