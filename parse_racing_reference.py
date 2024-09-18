@@ -6,6 +6,7 @@ import pandas as pd
 # import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from tqdm import tqdm
 
 
@@ -305,7 +306,13 @@ def get_racing_reference_standings(season: int, series_id="W") -> pd.DataFrame:
     # response = requests.get(url, headers=headers)
     # soup = BeautifulSoup(response.text, features='lxml')
 
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-extensions")
+    driver = webdriver.Chrome(options=options)
+    # driver = webdriver.Chrome()
+
     driver.get(url)
     time.sleep(5)
 
@@ -405,7 +412,13 @@ def get_racing_reference_race_results(season: int, series_id="W"):
     # main_df = pd.DataFrame()
     race_results_df = pd.DataFrame()
     row_df = pd.DataFrame()
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-extensions")
+    driver = webdriver.Chrome(options=options)
+    # driver = webdriver.Chrome()
+
 
     # headers = {
     #     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
@@ -506,7 +519,13 @@ def get_racing_reference_entry_lists(
     #     "Chrome/83.0.4103.97 Safari/537.36"
     # }
 
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-extensions")
+    driver = webdriver.Chrome(options=options)
+    # driver = webdriver.Chrome()
+
 
     for i in race_id_short_arr:
         url = "https://www.racing-reference.info/race-results/" +\
