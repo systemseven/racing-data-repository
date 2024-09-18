@@ -8,8 +8,6 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from tqdm import tqdm
 
-import chromedriver_autoinstaller
-
 
 
 
@@ -537,9 +535,7 @@ def get_racing_reference_entry_lists(
     return race_entry_lists_df
 
 
-def main():
-    chromedriver_autoinstaller.install()
-    
+def main():    
     # current_year = datetime.now().year
     now = datetime.now()
     current_year = now.year
