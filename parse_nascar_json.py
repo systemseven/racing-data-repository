@@ -829,7 +829,7 @@ def main():
         del df
 
     # parse_basic_race_results(current_year)
-    for i in range(2022, current_year+1):
+    for i in range(current_year, current_year+1):
         print(f'\nGetting the NASCAR race info for the {i} season.')
         info_df, results_df, \
             cautions_df, leaders_df, \
