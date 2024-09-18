@@ -4,6 +4,7 @@
 name: Update NASCAR Data
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "30 4 * 2-11 *" 
   # push:
