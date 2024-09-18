@@ -5,12 +5,12 @@ name: Update Racing Reference Data
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: "0 0 * 2-11 *" 
-  # push:
-  #  branches: [ main ]
-  #pull_request:
-  #  branches: [ main ]
+  schedule:
+    - cron: "0 0 * 2-11 *" 
+  push:
+   branches: [ main ]
+  pull_request:
+   branches: [ main ]
 jobs:
   build:
 
